@@ -1,64 +1,54 @@
-import { Check } from "lucide-react";
-
-const features = [
-  {
-    id: 1,
-    title: "Полный бесплатный доступ",
-    description: "На стадии бета-тестирования все функции доступны бесплатно"
-  },
-  {
-    id: 2,
-    title: "Неограниченное количество тестов",
-    description: "Создавайте столько тестов, опросов и квизов, сколько вам нужно"
-  },
-  {
-    id: 3,
-    title: "Продвинутая аналитика",
-    description: "Получайте детальную статистику по всем проведенным тестам и опросам"
-  }
-];
+import { BarChart2, Zap, MousePointerClick, LineChart } from "lucide-react";
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-20 bg-gray-50">
+    <section id="features" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Возможности платформы</h2>
-          <p className="text-xl text-gray-600">
-            askez.io — это новая интерактивная платформа для оценки знаний и дистанционного обучения
+        <div className="max-w-3xl mx-auto mb-16 text-center">
+          <h2 className="mb-4">Преимущества нашей платформы</h2>
+          <p className="text-lg text-gray-600">
+            askez.io предлагает уникальные возможности для создания и управления тестами,
+            опросами и квизами с интуитивно понятным интерфейсом и мощной аналитикой.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature) => (
-            <div 
-              key={feature.id} 
-              className="bg-white rounded-xl shadow-sm p-8 border border-gray-100 hover:shadow-md transition-shadow"
-            >
-              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                <Check className="w-6 h-6 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="gradient-card">
+            <div className="feature-icon mb-5">
+              <Zap size={24} />
             </div>
-          ))}
+            <h3 className="text-xl font-semibold mb-3">Быстрое создание</h3>
+            <p className="text-gray-600">
+              90% пользователей создают свой первый тест всего за 15 минут благодаря интуитивному интерфейсу и готовым шаблонам.
+            </p>
+          </div>
+
+          <div className="gradient-card">
+            <div className="feature-icon mb-5">
+              <BarChart2 size={24} />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Мгновенная аналитика</h3>
+            <p className="text-gray-600">
+              Получайте подробные отчеты и визуализацию результатов в реальном времени для принятия обоснованных решений.
+            </p>
+          </div>
+
+          <div className="gradient-card">
+            <div className="feature-icon mb-5">
+              <MousePointerClick size={24} />
+            </div>
+            <h3 className="text-xl font-semibold mb-3">Простой доступ</h3>
+            <p className="text-gray-600">
+              Создавайте тесты и опросы, доступные через уникальную ссылку на любом устройстве без установки дополнительного ПО.
+            </p>
+          </div>
         </div>
-        
-        <div className="mt-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 md:p-12 text-white shadow-lg">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">Влияйте на развитие платформы!</h3>
-              <p className="text-purple-100 text-lg">
-                Мы ценим вашу обратную связь для улучшения сервиса. Делитесь предложениями и помогайте сделать askez.io лучше для всех.
-              </p>
-            </div>
-            <div className="flex-shrink-0 w-full md:w-auto">
-              <a 
-                href="#feedback" 
-                className="block text-center w-full md:w-auto bg-white text-purple-700 font-medium px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
-              >
-                Оставить отзыв
-              </a>
+
+        <div className="mt-16 text-center">
+          <div className="p-6 rounded-2xl bg-askez-light inline-block">
+            <div className="flex items-center justify-center gap-2 text-lg font-semibold text-askez-purple">
+              <LineChart className="h-5 w-5" />
+              <span>Все аналитические инструменты доступны бесплатно в период бета-тестирования</span>
             </div>
           </div>
         </div>

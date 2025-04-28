@@ -1,89 +1,89 @@
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 py-12 border-t border-gray-200">
-      <div className="container mx-auto px-4 md:px-6">
+    <footer className="bg-white border-t border-gray-200">
+      <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
-            <a href="/" className="text-2xl font-bold text-purple-600 mb-4 inline-block">
+          <div className="col-span-1 md:col-span-2">
+            <a href="/" className="text-2xl font-bold gradient-text">
               askez.io
             </a>
-            <p className="text-gray-600 max-w-md">
-              Профессиональная платформа для создания тестов, опросов и квизов с мгновенной аналитикой
+            <p className="mt-4 text-gray-600 max-w-md">
+              Профессиональная платформа для создания тестов, опросов и квизов 
+              с мгновенной аналитикой. Присоединяйтесь к нам!
             </p>
-            <div className="mt-6 flex space-x-4">
-              {["twitter", "facebook", "instagram"].map((social) => (
-                <a 
-                  key={social} 
-                  href={`#${social}`} 
-                  className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-purple-50 hover:text-purple-600 transition-colors"
-                >
-                  <span className="sr-only">{social}</span>
-                  <SocialIcon type={social} />
-                </a>
-              ))}
+            <div className="flex gap-4 mt-6">
+              <a href="#" className="text-gray-400 hover:text-askez-purple transition-colors">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-askez-purple transition-colors">
+                <Twitter size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-askez-purple transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-askez-purple transition-colors">
+                <Linkedin size={20} />
+              </a>
             </div>
           </div>
           
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Ресурсы</h3>
+            <h3 className="text-lg font-semibold mb-4">Страницы</h3>
             <ul className="space-y-3">
-              {["Библиотека тестов", "Шаблоны", "Блог", "Руководства"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="#features" className="text-gray-600 hover:text-askez-purple transition-colors">
+                  Возможности
+                </a>
+              </li>
+              <li>
+                <a href="#audience" className="text-gray-600 hover:text-askez-purple transition-colors">
+                  Для кого
+                </a>
+              </li>
+              <li>
+                <a href="#how-it-works" className="text-gray-600 hover:text-askez-purple transition-colors">
+                  Как это работает
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-askez-purple transition-colors">
+                  Блог
+                </a>
+              </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Компания</h3>
+            <h3 className="text-lg font-semibold mb-4">Контакты</h3>
             <ul className="space-y-3">
-              {["О нас", "Контакты", "Условия использования", "Политика конфиденциальности"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-600 hover:text-purple-600 transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li className="text-gray-600">
+                support@askez.io
+              </li>
+              <li className="text-gray-600">
+                Служба поддержки: 9:00 - 18:00
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-askez-purple transition-colors">
+                  Политика конфиденциальности
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-askez-purple transition-colors">
+                  Условия использования
+                </a>
+              </li>
             </ul>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-200 text-center">
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} askez.io. Все права защищены.
-          </p>
+        <div className="mt-12 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
+          <p>&copy; {new Date().getFullYear()} askez.io. Все права защищены.</p>
         </div>
       </div>
     </footer>
   );
-};
-
-const SocialIcon = ({ type }: { type: string }) => {
-  switch (type) {
-    case "twitter":
-      return (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22 4.01C21 4.5 20.02 4.69 19 4.82C20.05 4.27 20.82 3.27 21.17 2.17C20.17 2.72 19.06 3.09 17.92 3.29C17.08 2.37 15.84 1.58 14.45 1.58C11.78 1.58 9.62 3.74 9.62 6.41C9.62 6.76 9.68 7.1 9.76 7.42C5.84 7.18 2.44 5.09 0.92 2.02C0.56 2.82 0.41 3.66 0.41 4.56C0.41 6.21 1.17 7.68 2.39 8.5C1.74 8.5 1.11 8.28 0.52 7.96C0.52 7.97 0.52 7.98 0.52 8C0.52 10.41 2.14 12.19 4.2 12.56C3.88 12.65 3.53 12.73 3.17 12.73C2.89 12.73 2.62 12.69 2.36 12.64C2.9 14.36 4.48 15.7 6.35 15.74C4.89 16.95 3.04 17.57 1.02 17.57C0.68 17.57 0.34 17.55 0 17.5C1.9 18.8 4.16 19.51 6.58 19.51C14.46 19.51 18.79 12.86 18.79 7.09C18.79 6.87 18.77 6.67 18.76 6.46C19.75 5.8 20.64 5.04 21.39 4.17L22 4.01Z" fill="currentColor" />
-        </svg>
-      );
-    case "facebook":
-      return (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20.9 2H3.1C2.5 2 2 2.5 2 3.1V20.9C2 21.5 2.5 22 3.1 22H12.7V14.2H9.8V10.9H12.7V8.5C12.7 5.6 14.4 4.1 17 4.1C18.3 4.1 19.4 4.2 19.8 4.3V7.3H18C16.7 7.3 16.4 7.9 16.4 8.8V10.9H19.7L19.2 14.2H16.4V22H20.9C21.5 22 22 21.5 22 20.9V3.1C22 2.5 21.5 2 20.9 2Z" fill="currentColor" />
-        </svg>
-      );
-    case "instagram":
-      return (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C14.717 2 15.056 2.01 16.122 2.06C17.187 2.11 17.912 2.277 18.55 2.525C19.21 2.779 19.766 3.123 20.322 3.678C20.8305 4.1779 21.224 4.78259 21.475 5.45C21.722 6.087 21.89 6.813 21.94 7.878C21.987 8.944 22 9.283 22 12C22 14.717 21.99 15.056 21.94 16.122C21.89 17.187 21.722 17.912 21.475 18.55C21.2247 19.2178 20.8311 19.8226 20.322 20.322C19.822 20.8303 19.2173 21.2238 18.55 21.475C17.913 21.722 17.187 21.89 16.122 21.94C15.056 21.987 14.717 22 12 22C9.283 22 8.944 21.99 7.878 21.94C6.813 21.89 6.088 21.722 5.45 21.475C4.78233 21.2245 4.17753 20.8309 3.678 20.322C3.16941 19.8222 2.77593 19.2175 2.525 18.55C2.277 17.913 2.11 17.187 2.06 16.122C2.013 15.056 2 14.717 2 12C2 9.283 2.01 8.944 2.06 7.878C2.11 6.812 2.277 6.088 2.525 5.45C2.77524 4.78218 3.1688 4.17732 3.678 3.678C4.17767 3.16923 4.78243 2.77573 5.45 2.525C6.088 2.277 6.812 2.11 7.878 2.06C8.944 2.013 9.283 2 12 2ZM12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7ZM18.5 6.75C18.5 6.41848 18.3683 6.10054 18.1339 5.86612C17.8995 5.6317 17.5815 5.5 17.25 5.5C16.9185 5.5 16.6005 5.6317 16.3661 5.86612C16.1317 6.10054 16 6.41848 16 6.75C16 7.08152 16.1317 7.39946 16.3661 7.63388C16.6005 7.8683 16.9185 8 17.25 8C17.5815 8 17.8995 7.8683 18.1339 7.63388C18.3683 7.39946 18.5 7.08152 18.5 6.75ZM12 9C12.7956 9 13.5587 9.31607 14.1213 9.87868C14.6839 10.4413 15 11.2044 15 12C15 12.7956 14.6839 13.5587 14.1213 14.1213C13.5587 14.6839 12.7956 15 12 15C11.2044 15 10.4413 14.6839 9.87868 14.1213C9.31607 13.5587 9 12.7956 9 12C9 11.2044 9.31607 10.4413 9.87868 9.87868C10.4413 9.31607 11.2044 9 12 9Z" fill="currentColor" />
-        </svg>
-      );
-    default:
-      return null;
-  }
 };
 
 export default Footer;
